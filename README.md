@@ -1,10 +1,12 @@
-#Tugas Flutter
+# Tugas Flutter
 Nama  : Fathi Qushoyyi Ahimsa
+
 NPM   : 2206082120
+
 Kelas : PBP C
 
-##Tugas 7
-###Implementasi Kode
+## Tugas 7
+### Implementasi Kode
 1. Membuat proyek  flutter baru dengan perintah `flutter create dataleakedapps`
 2. Memindahkan class `MyHomePage` dan `_MyHomePageState` ke dalam file baru yang bernama `menu.dart`
 3. Memperbaiki error yang terjadi di dalam file `main.dart`, yaitu pada baris yang berisi `home: const MyHomePage(title: 'Flutter Demo Home Page'),` dengan melakukan import `package:shopping_list/menu.dart`
@@ -130,7 +132,7 @@ Widget build(BuildContext context) {
     );
   }
 ```
-###Pertanyaan Tugas 7
+### Pertanyaan Tugas 7
 1. Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi FLutter?
     `Stateless Widget = Widget yang tidak memiliki state internal`
     `Stateful Widget = Memiliki State Internal yang dapat berubah seiring waktu.`
@@ -138,35 +140,43 @@ Widget build(BuildContext context) {
     Stateful widget dapat digunakan ketika widget perlu merespons perubahan dari input pengguna/data yang tersedia. Cocok untuk formulir, animasi, dan fitur lainnya yang perlu perubahan yang dinamis
 
 2. Sebutkan seluruh widget yang kamu gunakan untuk menyelesaikan tugas ini dan jelaskan fungsinya masing-masing.
-    Scaffold:
+    
+    `Scaffold:`
+
     Fungsi: Scaffold adalah kerangka kerja struktur dasar aplikasi Flutter. Ini menyediakan komponen dasar seperti AppBar, Drawer, BottomNavigationBar, dan Floating Action Button (FAB).
     Penggunaan: Scaffold digunakan sebagai struktur utama aplikasi untuk menyediakan komponen tata letak dasar.
-    AppBar:
+    
+    `AppBar:`
 
     Fungsi: AppBar adalah bilah aplikasi yang menampilkan judul dan opsional tombol aksi.
     Penggunaan: AppBar digunakan untuk menampilkan judul halaman atau aplikasi dan memungkinkan penggunaan tombol aksi seperti tombol kembali atau tombol menu navigasi.
-    Container:
+
+    `Container`
 
     Fungsi: Container adalah widget umum yang mengizinkan kustomisasi tata letak dan dekorasi.
     Penggunaan: Container digunakan untuk mengatur padding, margin, dan dekorasi, serta memungkinkan penataan widget di dalamnya.
-    SingleChildScrollView:
+    
+    `SingleChildScrollView:`
 
     Fungsi: SingleChildScrollView adalah widget yang memungkinkan scrolling konten di dalamnya ketika konten melebihi ukuran layar.
     Penggunaan: SingleChildScrollView digunakan ketika konten di dalamnya mungkin memerlukan scrolling, memastikan semua konten tetap dapat diakses oleh pengguna.
-    GridView.count:
+    
+    `GridView.count:`
 
     Fungsi: GridView.count adalah widget untuk menampilkan data dalam bentuk grid dengan jumlah kolom tetap.
     Penggunaan: Digunakan untuk menampilkan daftar item (dalam hal ini, tombol-tombol menu) dalam bentuk grid.
-    InkWell:
+    
+    `InkWell:`
 
     Fungsi: InkWell adalah widget yang memberikan respons saat disentuh, dengan memberikan efek "splash" atau "ripple".
     Penggunaan: Digunakan untuk menambahkan respons saat tombol-tombol menu ditekan, misalnya menampilkan pesan Snackbar.
-    ClipRRect:
+    
+    `ClipRRect:`
 
     Fungsi: ClipRRect adalah widget yang memotong sudut dari child widget dan memberinya bentuk melengkung (rounded corners).
     Penggunaan: Digunakan di sekitar InkWell untuk memberikan bentuk rounded square pada tombol-tombol menu.
-    Icon:
-
+    
+    `Icon:`
+    z
     Fungsi: Icon adalah widget untuk menampilkan ikon material design.
     Penggunaan: Digunakan untuk menampilkan ikon di dalam tombol-tombol menu.
-3. 
