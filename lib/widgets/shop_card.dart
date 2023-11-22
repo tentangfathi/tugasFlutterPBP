@@ -32,7 +32,7 @@ class ShopCard extends StatelessWidget {
             if (item.name == "Tambah produk")
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ShopFormPage()));
-            if (item.name == "Lihat produk")
+            else if (item.name == "Lihat produk")
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ItemListPage()));
           },

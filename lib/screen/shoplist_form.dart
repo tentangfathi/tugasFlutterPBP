@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:dataleakedapps/screen/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:dataleakedapps/widgets/left_drawer.dart';
 
@@ -167,43 +170,30 @@ class _ShopFormPageState extends State<ShopFormPage> {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.indigo),
                 ),
-                onPressed: () {
+                onPressed: () async {
                   if (_formKey.currentState!.validate()) {
-                    ItemStorage.addItem(Item(
-                      name: _name,
-                      price: _price,
-                      amount: _amount,
-                      description: _description,
-                    ));
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: const Text('Produk berhasil tersimpan'),
-                          content: SingleChildScrollView(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Nama: $_name'),
-                                // TODO: Munculkan value-value lainnya
-                                Text('Harga: $_price'),
-                                Text('Deksripsi: $_description'),
-                                Text('Jumlah: $_amount')
-                              ],
-                            ),
-                          ),
-                          actions: [
-                            TextButton(
-                              child: const Text('OK'),
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                    _formKey.currentState!.reset();
+                    // Kirim ke Django dan tunggu respons
+                    final response = await request.postJson(
+                        "https://localhost:8000/create-flutter/",
+                        jsonEncode(<String, String>{
+                          'name': _name,
+                          'amount': _amount.toString(),
+                          'description': _description,
+                        }));
+                    if (response['status'] == 'success') {
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text("Item baru berhasil disimpan!"),
+                      ));
+                      // ignore: use_build_context_synchronously
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyHomePage()),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text("Terdapat kesalahan, silakan coba lagi."),
+                      ));
+                    }
                   }
                 },
                 child: const Text(

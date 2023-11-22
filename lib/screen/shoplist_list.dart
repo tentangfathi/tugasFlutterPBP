@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:dataleakedapps/screen/shoplist_form.dart';
 
 class ItemListPage extends StatelessWidget {
-  const ItemListPage({Key? key}) : super(key: key);
+  final Item item;
+  const ItemListPage({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -5,6 +5,50 @@ NPM   : 2206082120
 
 Kelas : PBP C
 
+## Tugas 9
+
+### Pertanyaan Tugas 9
+1. Pengambilan Data JSON Tanpa Membuat Model:
+Memungkinkan untuk mengambil data JSON tanpa membuat model terlebih dahulu di Flutter dengan menggunakan dart:convert.
+Keuntungan dari pendekatan ini termasuk kecepatan dan fleksibilitas, yang berguna untuk prototyping atau pengembangan awal. Namun, tanpa model, terdapat kekurangan dalam hal keamanan tipe dan risiko error runtime jika struktur JSON berubah.
+Membuat model direkomendasikan untuk proyek yang lebih besar atau yang membutuhkan stabilitas dan keamanan lebih tinggi, karena menyediakan keamanan tipe, mempermudah manajemen data, dan memanfaatkan OOP untuk struktur kode yang lebih terorganisir.
+
+2. Fungsi CookieRequest:
+CookieRequest digunakan untuk mengelola sesi pengguna yang telah login dalam aplikasi Flutter, memungkinkan aplikasi untuk mempertahankan status login pengguna dan memudahkan integrasi dengan web server.
+Penting untuk membagikan instans CookieRequest ke seluruh komponen dalam aplikasi agar sesi pengguna tetap konsisten dan fitur yang memerlukan autentikasi dapat berfungsi dengan baik.
+
+3. Mekanisme Pengambilan Data JSON di Flutter:
+Data JSON diambil dari web server menggunakan permintaan HTTP (seperti http.get()).
+Data JSON tersebut kemudian di-decode menjadi struktur data Dart (List atau Map) menggunakan json.decode().
+Data ini diolah dan diubah menjadi widget Flutter melalui fungsi seperti List.map() atau Map.map().
+Data ditampilkan dengan widget seperti ListView atau GridView.
+
+4. Mekanisme Autentikasi Flutter ke Django:
+Data akun (username dan password) dikirim dari aplikasi Flutter ke server Django.
+Django memproses data tersebut, melakukan autentikasi, dan mengirimkan respon kembali ke aplikasi Flutter.
+Jika autentikasi berhasil, Django mengatur sesi pengguna, dan aplikasi Flutter menerima konfirmasi.
+Aplikasi Flutter lalu menampilkan menu atau layar utama, menandakan proses autentikasi telah selesai.
+
+5. Widget dan Fungsinya:
+Drawer: Untuk membuat navigasi drawer dengan menu.
+ListTile: Menampilkan item dalam list atau drawer.
+TextFormField: Mengumpulkan input teks.
+ElevatedButton: Tombol interaktif untuk eksekusi aksi.
+AlertDialog: Menampilkan popup informasi atau konfirmasi.
+FutureBuilder: Membangun UI berdasarkan hasil Future.
+CircularProgressIndicator: Menunjukkan indikator proses loading.
+ListView.builder dan GridView.builder: Membuat list atau grid yang dapat diubah-ubah.
+Card: Menampilkan informasi dalam format kartu.
+FloatingActionButton: Tombol aksi utama, seringkali untuk menambahkan item baru.
+
+6. Step by step
+Untuk halaman form item baru, dibuat file bernama itemform.dart. Form ini terdiri dari empat bidang input: nama, harga, jumlah, dan deskripsi, sesuai dengan model yang digunakan dalam proyek Django sebelum UTS. Terdapat sebuah tombol simpan yang dibuat dengan ElevatedButton. Form ini juga dilengkapi dengan validator untuk memastikan semua input valid dan sesuai tipe data model.
+
+Di menu.dart, navigasi diatur sedemikian rupa sehingga saat tombol "Tambah Item" diklik, pengguna akan diarahkan ke halaman itemform.dart. Jika tombol simpan di halaman form diklik dan semua input memenuhi validasi, akan muncul popup yang menampilkan informasi item sesuai dengan data yang diinput.
+
+Sebuah drawer dibuat dalam file terpisah bernama drawer.dart, yang kemudian diimpor ke menu.dart. Drawer ini berisi ListTile yang masing-masing dilengkapi dengan ikon dan teks untuk setiap menu. Fungsi navigasi juga ditambahkan, sehingga memungkinkan pengguna berpindah ke halaman yang berbeda sesuai dengan menu yang dipilih. Drawer ini kemudian dibangun dan ditampilkan di halaman utama melalui menu.dart.
+
+
 ## Tugas 8
 
 ### Pertanyaan Tugas 8
